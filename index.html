@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MishMar | Moda Femenina</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            background-color: #f8f1e8;
+            color: #3d2920;
+        }
+
+        /* =========================
+           ENCABEZADO
+        ========================= */
+
+        header {
+            background-color: #3b241b;
+            color: #f8e8d0;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 30px;
+            letter-spacing: 5px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: #f8e8d0;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d99559;
+        }
+
+        /* =========================
+           PORTADA
+        ========================= */
+
+        .hero {
+            height: 90vh;
+            background:
+                linear-gradient(rgba(55,35,25,0.45), rgba(55,35,25,0.45)),
+                url("https://www.inmsol.com/wp-content/uploads/2019/09/oto%C3%B1o.jpg");
+
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 750px;
+            padding: 30px;
+        }
+
+        .hero h1 {
+            font-size: 75px;
+            letter-spacing: 12px;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 27px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .boton {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 30px;
+            background-color: #b96f3b;
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            background-color: #8e4e29;
+        }
+
+        /* =========================
+           SECCIONES
+        ========================= */
+
+        section {
+            padding: 80px 10%;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .titulo h2 {
+            font-size: 38px;
+            color: #704329;
+            margin-bottom: 12px;
+        }
+
+        .linea {
+            width: 70px;
+            height: 3px;
+            background-color: #b96f3b;
+            margin: auto;
+        }
+
+        .texto {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            font-size: 17px;
+            line-height: 1.9;
+        }
+
+        /* =========================
+           SOBRE MISHMAR
+        ========================= */
+
+        .sobre {
+            background-color: #fffaf4;
+        }
+
+        .sobre-contenido {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .sobre-imagen {
+            width: 45%;
+        }
+
+        .sobre-imagen img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .sobre-texto {
+            width: 55%;
+        }
+
+        .sobre-texto h2 {
+            color: #704329;
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .sobre-texto p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           MISIÓN Y VISIÓN
+        ========================= */
+
+        .mision {
+            background-color: #ead4bd;
+        }
+
+        .tarjetas {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tarjeta {
+            background-color: #fffaf4;
+            width: 350px;
+            padding: 35px;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 5px 20px rgba(70,40,20,0.12);
+        }
+
+        .tarjeta h3 {
+            color: #8b542f;
+            font-size: 25px;
+            margin-bottom: 18px;
+        }
+
+        .tarjeta p {
+            line-height: 1.7;
+        }
+
+        /* =========================
+           COLECCIÓN
+        ========================= */
+
+        .coleccion {
+            background-color: #f8f1e8;
+        }
+
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .producto {
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(50,30,20,0.12);
+            transition: 0.3s;
+        }
+
+        .producto:hover {
+            transform: translateY(-8px);
+        }
+
+        .producto img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .producto-info {
+            padding: 22px;
+            text-align: center;
+        }
+
+        .producto-info h3 {
+            color: #704329;
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .producto-info p {
+            line-height: 1.6;
+        }
+
+        /* =========================
+           PROPUESTA DE VALOR
+        ========================= */
+
+        .valor {
+            background-color: #3b241b;
+            color: #f8e8d0;
+            text-align: center;
+        }
+
+        .valor .titulo h2 {
+            color: #f8e8d0;
+        }
+
+        .valor-contenido {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .valor-contenido p {
+            line-height: 1.9;
+            font-size: 18px;
+        }
+
+        .perlas {
+            margin-top: 35px;
+            font-size: 35px;
+            letter-spacing: 10px;
+        }
+
+        /* =========================
+           CARACTERÍSTICAS
+        ========================= */
+
+        .caracteristicas {
+            background-color: #fffaf4;
+        }
+
+        .caracteristica {
+            width: 230px;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .icono {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .caracteristica h3 {
+            color: #704329;
+            margin-bottom: 10px;
+        }
+
+        .caracteristica p {
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        /* =========================
+           COLORES
+        ========================= */
+
+        .colores {
+            text-align: center;
+            background-color: #ead4bd;
+        }
+
+        .circulos {
+            margin-top: 30px;
+        }
+
+        .circulo {
+            display: inline-block;
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            margin: 10px;
+            border: 3px solid white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .cafe {
+            background-color: #704329;
+        }
+
+        .naranja {
+            background-color: #b96f3b;
+        }
+
+        .beige {
+            background-color: #d8b894;
+        }
+
+        .crema {
+            background-color: #f8f1e8;
+        }
+
+        /* =========================
+           CLIENTE
+        ========================= */
+
+        .cliente {
+            background-color: #f8f1e8;
+        }
+
+        /* =========================
+           CONTACTO
+        ========================= */
+
+        .contacto {
+            background:
+                linear-gradient(rgba(59,36,27,0.85), rgba(59,36,27,0.85)),
+                url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        .contacto h2 {
+            color: white;
+        }
+
+        .contacto p {
+            margin: 12px;
+            font-size: 18px;
+        }
+
+        /* =========================
+           PIE DE PÁGINA
+        ========================= */
+
+        footer {
+            background-color: #24150f;
+            color: #ead4bd;
+            text-align: center;
+            padding: 35px;
+        }
+
+        footer h2 {
+            letter-spacing: 6px;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            margin: 8px;
+            font-size: 14px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 8px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+                letter-spacing: 7px;
+            }
+
+            .hero h2 {
+                font-size: 21px;
+            }
+
+            .sobre-contenido {
+                flex-direction: column;
+            }
+
+            .sobre-imagen,
+            .sobre-texto {
+                width: 100%;
+            }
+
+            .productos {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="pagina">
+
+        <!-- =========================
+             MENÚ
+        ========================= -->
+
+        <header>
+
+            <div class="logo">
+                MISHMAR
+            </div>
+
+            <nav>
+
+                <a href="#inicio">Inicio</a>
+                <a href="#nosotras">Nosotras</a>
+                <a href="#coleccion">Colección</a>
+                <a href="#valor">Nuestra esencia</a>
+                <a href="#contacto">Contacto</a>
+
+            </nav>
+
+        </header>
+
+
+        <!-- =========================
+             PORTADA
+        ========================= -->
+
+        <section class="hero" id="inicio">
+
+            <div class="hero-content">
+
+                <h1>MISHMAR</h1>
+
+                <h2>Moda que convierte cada detalle en una expresión de estilo.</h2>
+
+                <p>
+                    Descubre una propuesta de moda femenina donde
+                    la elegancia, la creatividad y los detalles especiales
+                    se unen para crear prendas únicas.
+                </p>
+
+                <a href="#coleccion" class="boton">
+                    DESCUBRIR COLECCIÓN
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SOBRE NOSOTRAS
+        ========================= -->
+
+        <section class="sobre" id="nosotras">
+
+            <div class="sobre-contenido">
+
+                <div class="sobre-imagen">
+
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=80">
+
+                </div>
+
+
+                <div class="sobre-texto">
+
+                    <h2>Sobre MishMar</h2>
+
+                    <p>
+                        MishMar es una marca de moda femenina creada
+                        para mujeres que buscan expresar su personalidad
+                        a través de prendas modernas, elegantes y diferentes.
+                    </p>
+
+                    <p>
+                        Nuestra inspiración nace de la moda contemporánea
+                        y de los colores cálidos característicos del otoño,
+                        combinando tonos tierra con diseños femeninos.
+                    </p>
+
+                    <p>
+                        En cada creación buscamos cuidar los detalles,
+                        porque creemos que una pequeña diferencia puede
+                        transformar completamente una prenda.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MISIÓN Y VISIÓN
+        ========================= -->
+
+        <section class="mision">
+
+            <div class="titulo">
+
+                <h2>Nuestra identidad</h2>
+
+                <div class="linea"></div>
+
+            </div>
+
+
+            <div class="tarjetas">
+
+                <div class="tarjeta">
+
+                    <h3>🌷 Misión</h3>
+
+                    <p>
+                        Diseñar y ofrecer prendas femeninas modernas,
+                        elegantes y de buena calidad, incorporando detalles
+                        creativos que permitan a nuestras clientes expresar
+                        su estilo y personalidad.
+                    </p>
+
+                </div>
+
+
+                <div class="tarjeta">
+
+                    <h3>✨ Visión</h3>
+
+                    <p>
+                        Ser una marca reconocida por sus diseños femeninos,
+                        creativos e innovadores, destacándonos por la calidad
+                        de nuestras prendas y nuestra propuesta de moda.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             COLECCIÓN
+        ========================= -->
+
+        <section class="coleccion" id="coleccion">
+
+            <div class="titulo">
+
+                <h2>Nuestra colección</h2>
+
+                <div class="linea"></div>
+
+            </div>
+
+
+            <p class="texto">
+
+                Nuestra colección está inspirada en el otoño y combina
+                colores cálidos con diseños modernos, femeninos y elegantes.
+                Cada prenda está pensada para diferentes ocasiones y estilos.
+
+            </p>
+
+
+            <br><br>
+
+
+            <div class="productos">
+
+
+                <!-- PRODUCTO 1 -->
+
+                <div class="producto">
+
+                    <img src="https://img.ltwebstatic.com/images3_pi/2024/11/19/97/17319792570ff8d38d13749ae7607bd2860c7dbf93_thumbnail_405x.jpg">
+
+                    <div class="producto-info">
+
+                        <h3>Vestidos</h3>
+
+                        <p>
+                            Diseños femeninos y elegantes con detalles
+                            especiales que resaltan cada prenda.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCTO 2 -->
+
+                <div class="producto">
+
+                    <img src="https://i.pinimg.com/736x/ac/66/24/ac66240a71d57af0b6b5651fe4a58afb.jpg">
+
+                    <div class="producto-info">
+
+                        <h3>Blusas</h3>
+
+                        <p>
+                            Prendas modernas y versátiles para crear
+                            diferentes estilos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCTO 3 -->
+
+                <div class="producto">
+
+                    <img src="https://i.pinimg.com/736x/b8/3e/3f/b83e3f2c53e8111c16aad203e5732a67.jpg">
+
+                    <div class="producto-info">
+
+                        <h3>Looks MishMar</h3>
+
+                        <p>
+                            Combinaciones pensadas para mujeres que
+                            buscan comodidad, elegancia y personalidad.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROPUESTA DE VALOR
+        ========================= -->
+
+        <section class="valor" id="valor">
+
+            <div class="titulo">
+
+                <h2>Nuestra esencia</h2>
+
+                <div class="linea"></div>
+
+            </div>
+
+
+            <div class="valor-contenido">
+
+                <p>
+
+                    MishMar busca diferenciarse mediante la combinación
+                    de moda, creatividad e innovación. Uno de nuestros
+                    elementos característicos son las <strong>perlas</strong>,
+                    utilizadas como detalles decorativos en algunas prendas.
+
+                    Estos detalles permiten transformar una prenda convencional
+                    en una pieza con una apariencia delicada, femenina y especial.
+
+                </p>
+
+
+                <div class="perlas">
+
+                    ● ● ● ● ● ●
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CARACTERÍSTICAS
+        ========================= -->
+
+        <section class="caracteristicas">
+
+            <div class="titulo">
+
+                <h2>¿Por qué MishMar?</h2>
+
+                <div class="linea"></div>
+
+            </div>
+
+
+            <div class="tarjetas">
+
+
+                <div class="caracteristica">
+
+                    <div class="icono">✨</div>
+
+                    <h3>Creatividad</h3>
+
+                    <p>
+                        Diseños pensados para ofrecer una propuesta
+                        diferente y original.
+                    </p>
+
+                </div>
+
+
+                <div class="caracteristica">
+
+                    <div class="icono">🤍</div>
+
+                    <h3>Elegancia</h3>
+
+                    <p>
+                        Prendas femeninas que combinan estilo y delicadeza.
+                    </p>
+
+                </div>
+
+
+                <div class="caracteristica">
+
+                    <div class="icono">💎</div>
+
+                    <h3>Detalles</h3>
+
+                    <p>
+                        Incorporamos elementos especiales como las
+                        perlas para darle identidad a nuestras prendas.
+                    </p>
+
+                </div>
+
+
+                <div class="caracteristica">
+
+                    <div class="icono">🌿</div>
+
+                    <h3>Inspiración</h3>
+
+                    <p>
+                        Nuestra colección toma inspiración de los colores
+                        cálidos y la estética del otoño.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             COLORES
+        ========================= -->
+
+        <section class="colores">
+
+            <div class="titulo">
+
+                <h2>La paleta MishMar</h2>
+
+                <div class="linea"></div>
+
+            </div>
+
+
+            <p class="texto">
+
+                Nuestra identidad visual está inspirada en tonos cálidos,
+                elegantes y relacionados con la temporada de otoño.
+
+            </p>
+
+
+            <div class="circulos">
+
+                <span class="circulo cafe"></span>
+
+                <span class="circulo naranja"></span>
+
+                <span class="circulo beige"></span>
+
+                <span class="circulo crema"></span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CLIENTE
+        ========================= -->
+
+        <section class="cliente">
+
+            <div class="titulo">
+
+                <h2>Nuestras clientas</h2>
+
+                <div class="linea"></div>
+
+            </div>
+
+
+            <p class="texto">
+
+                MishMar está dirigida principalmente a jóvenes y adultas
+                entre los 18 y 35 años que disfrutan de la moda y buscan
+                prendas modernas, femeninas y diferentes.
+
+                Son mujeres que desean seguir las tendencias, pero también
+                buscan prendas que les permitan expresar su personalidad.
+
+            </p>
+
+
+            <br><br>
+
+
+            <div class="tarjetas">
+
+
+                <div class="tarjeta">
+
+                    <h3>Joven estudiante</h3>
+
+                    <p>
+                        Busca prendas modernas y versátiles para diferentes
+                        momentos de su día.
+                    </p>
+
+                </div>
+
+
+                <div class="tarjeta">
+
+                    <h3>Mujer profesional</h3>
+
+                    <p>
+                        Busca combinar elegancia, comodidad y modernidad
+                        en sus diferentes actividades.
+                    </p>
+
+                </div>
+
+
+                <div class="tarjeta">
+
+                    <h3>Amante de la moda</h3>
+
+                    <p>
+                        Disfruta conocer tendencias y encontrar diseños
+                        diferentes que reflejen su personalidad.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACTO
+        ========================= -->
+
+        <section class="contacto" id="contacto">
+
+            <div class="titulo">
+
+                <h2>Conoce MishMar</h2>
+
+                <div class="linea"></div>
+
+            </div>
+
+
+            <p>
+                ¿Quieres conocer más sobre nuestra marca?
+            </p>
+
+            <p>
+                📱 WhatsApp: 3028554443 - 3123932634
+            </p>
+
+            <p>
+                📧 Correo: mcorredor2009@gmail.com - Ms4035871@gmail.com
+            </p>
+
+            <p>
+                📸 Instagram: @mishmar_16
+            </p>
+
+            <a href="#inicio" class="boton">
+                VOLVER AL INICIO
+            </a>
+
+        </section>
+
+
+        <!-- =========================
+             PIE DE PÁGINA
+        ========================= -->
+
+        <footer>
+
+            <h2>MISHMAR</h2>
+
+            <p>
+                Moda que convierte cada detalle en una expresión de estilo.
+            </p>
+
+            <p>
+                © 2026 MishMar | Todos los derechos reservados.
+            </p>
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
+```
